@@ -2,59 +2,61 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/btn_reserve"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.ReservationActivity"
 
-    >
+    tools:context=".views.ReservationActivity">
 
     <TextView
+        android:id="@+id/txt_welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="@string/welcome"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="50dp"
+        android:text="@string/welcome"
         android:textSize="16sp"
-        android:id="@+id/txt_welcome"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <CalendarView
+        android:id="@+id/cal_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_welcome"
-        android:layout_marginTop="15dp"
-        android:id="@+id/cal_main"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+
         android:layout_marginRight="20dp"
-        />
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_welcome" />
+
     <TextView
         android:id="@+id/txt_legend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cal_legend"
-        app:layout_constraintTop_toBottomOf="@+id/cal_main"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginLeft="20dp"
-        />
+        android:text="@string/cal_legend"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cal_main" />
+
     <TextView
         android:id="@+id/txt_currency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
         android:text="@string/currency"
-        app:layout_constraintTop_toBottomOf="@+id/cal_main"
         app:layout_constraintStart_toEndOf="@+id/txt_legend"
-        android:layout_marginLeft="70dp"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/cal_main" />
 
     <TextView
         android:id="@+id/txt_check_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
         android:text="Check-in"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txt_currency" />
@@ -64,24 +66,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/background"
-        android:padding="2dp"
-        android:text="2013/08/27"
+        android:padding="5dp"
+        android:text="******"
+
         app:layout_constraintStart_toEndOf="@+id/txt_check_in"
         app:layout_constraintTop_toBottomOf="@+id/txt_currency" />
 
     <TextView
+        android:id="@+id/txt_nights"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txt_nights"
-        android:text="Nights"
-        app:layout_constraintTop_toBottomOf="@+id/txt_check_in"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="40dp"
         android:layout_marginLeft="20dp"
-        />
+        android:layout_marginTop="40dp"
+        android:text="Nights"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_check_in" />
 
     <Spinner
         android:id="@+id/spinner1"
@@ -94,15 +97,15 @@
         app:layout_constraintTop_toBottomOf="@id/txt_check_in" />
 
     <TextView
+        android:id="@+id/txt_num_of_adults"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txt_num_of_adults"
-        android:text="@string/adults"
-        app:layout_constraintTop_toBottomOf="@+id/txt_nights"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="40dp"
         android:layout_marginLeft="20dp"
-        />
+        android:layout_marginTop="40dp"
+        android:lines="2"
+        android:text="***Adults\nper room"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nights" />
 
     <Spinner
         android:id="@+id/spinner2"
@@ -119,8 +122,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginLeft="112dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginLeft="104dp"
+        android:layout_marginTop="32dp"
         android:text="@string/check_out"
         app:layout_constraintStart_toStartOf="@+id/txt_check_in_str"
         app:layout_constraintTop_toBottomOf="@+id/txt_currency" />
@@ -129,54 +133,63 @@
         android:id="@+id/txt_check_out_str"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/background"
-        android:padding="2dp"
-        android:text="2013/08/27"
-        app:layout_constraintStart_toEndOf="@+id/txt_check_out"
+        android:padding="5dp"
+        android:text="******"
 
+        app:layout_constraintStart_toEndOf="@+id/txt_check_out"
         app:layout_constraintTop_toBottomOf="@+id/txt_currency" />
+
     <TextView
+        android:id="@+id/txt_beds"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txt_beds"
-        android:text="***Beds"
-        app:layout_constraintTop_toBottomOf="@+id/txt_check_out"
-        app:layout_constraintStart_toStartOf="@+id/txt_check_out"
         android:layout_marginTop="40dp"
-        />
+        android:text="***Beds"
+        app:layout_constraintStart_toStartOf="@+id/txt_check_out"
+        app:layout_constraintTop_toBottomOf="@+id/txt_check_out" />
 
     <Spinner
         android:id="@+id/spinner3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintStart_toEndOf="@+id/txt_beds"
         app:layout_constraintTop_toBottomOf="@+id/txt_check_out" />
 
     <TextView
+        android:id="@+id/txt_num_of_children"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txt_num_of_children"
-        android:text="@string/children"
-        app:layout_constraintTop_toBottomOf="@+id/txt_beds"
-        app:layout_constraintStart_toStartOf="@+id/txt_beds"
         android:layout_marginTop="40dp"
-        />
+        android:lines="2"
+        android:text="***Children\nper room"
+        app:layout_constraintStart_toStartOf="@+id/txt_beds"
+        app:layout_constraintTop_toBottomOf="@+id/txt_beds" />
 
     <Spinner
         android:id="@+id/spinner4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="40dp"
         app:layout_constraintStart_toEndOf="@+id/txt_num_of_children"
         app:layout_constraintTop_toBottomOf="@+id/txt_beds" />
+
+    <Button
+        android:id="@+id/btn_place_reservation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="Continue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txt_num_of_children" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

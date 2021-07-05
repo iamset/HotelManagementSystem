@@ -3,6 +3,7 @@
     package="com.example.hotelmanagementsystem">
 
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HotelManagementSystem">
-        <activity android:name=".views.ReservationActivity"></activity>
+        <activity android:name=".views.ManageBookedRoomActivity"></activity>
+        <activity android:name=".views.HomeScreenActivity" />
+        <activity android:name=".views.GuestInformationActivity3" />
+        <activity android:name=".views.GuestInformationActivity2" />
+        <activity android:name=".views.SelectedDatesActivity" />
+        <activity android:name=".views.GuestInformationActivity" />
+        <activity android:name=".views.ReservationActivity" />
         <activity
             android:name=".views.SplashScreenActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
